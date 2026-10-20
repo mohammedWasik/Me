@@ -1,0 +1,136 @@
+:root {
+  --paper: #f6f3ee;
+  --ink: #1c1b19;
+  --muted: #6b665e;
+  --rule: #d9d3c8;
+  --accent: #a4452c;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+body { margin: 0; }
+
+#graph {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 6rem;
+}
+
+h1, h2, h3, p, ul, dl, dd { margin: 0; }
+
+header { margin-bottom: 4rem; }
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+
+.meta,
+h2,
+dt {
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.meta { margin-top: 0.25rem; line-height: 1.7; }
+
+section {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem 2rem;
+  border-top: 1px solid var(--rule);
+  padding: 1.6rem 0 2.2rem;
+}
+
+h2 { font-weight: 400; padding-top: 0.35rem; }
+
+section > div > * + * { margin-top: 1rem; }
+
+article + article { margin-top: 2rem; }
+
+h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+ul {
+  margin-top: 0.6rem;
+  padding-left: 1.1rem;
+}
+
+li + li { margin-top: 0.35rem; }
+
+li::marker { color: var(--muted); }
+
+.item { line-height: 1.45; }
+
+
+dl {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.55rem 1rem;
+}
+
+dt { padding-top: 0.3rem; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection { background: var(--accent); color: var(--paper); }
+
+@media (max-width: 38rem) {
+  html { font-size: 18px; }
+  main { padding-top: 3rem; }
+  section { grid-template-columns: 1fr; gap: 0.5rem; }
+  h1 { font-size: 2.2rem; }
+  dl { grid-template-columns: 5.5rem 1fr; }
+}
+
+@media print {
+  html { background: #fff; font-size: 12pt; }
+  main { padding: 0; }
+}
